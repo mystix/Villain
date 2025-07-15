@@ -1076,7 +1076,7 @@ def main():
 					lhost = parse_lhost(cmd_list[1])
 					try: lport = int(cmd_list[2])
 					except: lport = -1					
-					session_id = cmd_list[3]
+					session_id = Sessions_Manager.alias_to_session_id(cmd_list[3])
 					sessions_check = Sessions_Manager.sessions_check(session_id)
 					
 					if sessions_check[0]:
