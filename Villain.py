@@ -1077,6 +1077,12 @@ def main():
 					try: lport = int(cmd_list[2])
 					except: lport = -1					
 					session_id = Sessions_Manager.alias_to_session_id(cmd_list[3])
+
+					if not session_id:
+						print('Failed to interpret session_id.')
+						Main_prompt.ready = True
+						continue
+
 					sessions_check = Sessions_Manager.sessions_check(session_id)
 					
 					if sessions_check[0]:
